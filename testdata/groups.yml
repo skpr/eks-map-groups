@@ -1,0 +1,5 @@
+- name: group1
+  username: user1
+  groups:
+    - group1
+    - group2

@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: golang:1.11
+    working_directory: /go/src/github.com/skpr/eks-map-groups
+    steps:
+      - checkout
+      - run: make lint
+      - run: make test

@@ -12,7 +12,7 @@ import (
 )
 
 // Helper function to sync the
-func sync(iamclient IAM, k8sclient kubernetes.Interface, file, namespace, name string) error {
+func sync(iamclient IAMClient, k8sclient kubernetes.Interface, file, namespace, name string) error {
 	f, err := ioutil.ReadFile(file)
 	if err != nil {
 		return errors.Wrap(err, "failed to read file")
@@ -51,7 +51,7 @@ func sync(iamclient IAM, k8sclient kubernetes.Interface, file, namespace, name s
 }
 
 // Helper function to get a list of users.
-func getUsers(client IAM, groups []MapGroup) ([]MapUser, error) {
+func getUsers(client IAMClient, groups []MapGroup) ([]MapUser, error) {
 	var users []MapUser
 
 	for _, group := range groups {

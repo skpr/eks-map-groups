@@ -6,5 +6,6 @@ jobs:
     working_directory: /go/src/github.com/skpr/eks-map-groups
     steps:
       - checkout
+      - run: go get -u golang.org/x/lint/golint
       - run: make lint
       - run: make test
